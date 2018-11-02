@@ -58,7 +58,7 @@ Ext.extend(sVideos.window.CreateVideo, MODx.Window, {
             anchor: '99%',
             allowBlank: true,
         }, {
-            xtype: 'textarea',
+            xtype: 'htmleditor',
             fieldLabel: _('svideos_video_content'),
             name: 'content',
             id: config.id + '-content',
@@ -206,7 +206,7 @@ Ext.extend(sVideos.window.UpdateVideo, MODx.Window, {
             anchor: '99%',
             allowBlank: true,
         }, {
-            xtype: 'textarea',
+            xtype: 'htmleditor',
             fieldLabel: _('svideos_video_content'),
             name: 'content',
             id: config.id + '-content',
