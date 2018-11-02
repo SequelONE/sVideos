@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model package="svideos" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM" version="1.1">
+    <object class="sVideosCategories" table="sv_categories" extends="xPDOSimpleObject">
+        <field key="name" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="alias" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="active" dbtype="tinyint" precision="1" phptype="integer" null="false" default="1" />
+        <composite alias="sVideosVideo" class="sVideosVideo" local="id" foreign="category_id" cardinality="many" owner="local" />
+    </object>
+    <object class="sVideosVideo" table="sv_videos" extends="xPDOSimpleObject">
+        <field key="category_id" dbtype="int" precision="11" phptype="integer" null="false" default="0" />
+        <field key="title" dbtype="varchar" precision="186" phptype="string" null="true" />
+        <field key="description" dbtype="varchar" precision="301" phptype="string" null="true" />
+        <field key="keywords" dbtype="varchar" precision="297" phptype="string" null="true" />
+        <field key="longtitle" dbtype="varchar" precision="186" phptype="string" null="true" />
+        <field key="content" dbtype="varchar" precision="9039" phptype="string" null="true" />
+        <field key="image" dbtype="text" phptype="string" null="true" />
+        <field key="code" dbtype="varchar" precision="11" phptype="string" null="true" />
+        <field key="alias" dbtype="varchar" precision="255" phptype="string" null="true" />
+        <field key="genre" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="channel" dbtype="varchar" precision="100" phptype="string" null="true" />
+        <field key="channel_name" dbtype="varchar" precision="100" phptype="string" null="true" />
+        <field key="keys" dbtype="varchar" precision="115" phptype="string" null="true" />
+        <field key="active" dbtype="tinyint" precision="1" phptype="integer" null="false" default="1" />
+        <field key="createdby" dbtype="tinyint" precision="1" phptype="integer" null="false" default="1" />
+        <field key="createdon" dbtype="timestamp" phptype="timestamp" null="true" default="CURRENT_TIMESTAMP" />
+        <field key="editedon" dbtype="timestamp" phptype="timestamp" null="false" default="CURRENT_TIMESTAMP"  extra="on update current_timestamp" />
+        <aggregate alias="sVideosCategories" class="sVideosCategories" local="category_id" foreign="id" cardinality="one" owner="foreign" />
+    </object>
+</model>
