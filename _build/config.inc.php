@@ -22,7 +22,7 @@ return [
         'plugins' => false,
         'resources' => false,
         'settings' => false,
-        'snippets' => false,
+        'snippets' => true,
         'templates' => false,
         'widgets' => false,
     ],

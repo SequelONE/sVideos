@@ -46,7 +46,6 @@ class sVideosHomeManagerController extends modExtraManagerController
         return $this->modx->lexicon('svideos');
     }
 
-
     /**
      * @return void
      */

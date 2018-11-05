@@ -35,4 +35,11 @@ return [
             ],
         ],
     ],
+	'pdoClass' => [
+		'file' => 'pdoclass',
+		'description' => 'Class for pdoTools',
+		'properties' => [
+
+		],
+	],
 ];
